@@ -1,0 +1,57 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'website/css/services.css' %}">
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3">
+                    <!-- <i class="fa-solid fa-people-roof text-primary fa-2xl mt-4 mr-2"></i> -->
+                    <div class="d-flex flex-column ml-2">
+                        <h2 style="align-self: center;"><span class="badge badge-pill badge-info mb-2">Roofing</span></h2>
+                        {% include 'website/services/urethane.html' %}
+                        {% include 'website/services/single-ply.html' %}
+                        {% include 'website/services/bitumen.html' %}
+                        {% include 'website/services/foam-flashing.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="https://i.imgur.com/IpKQiNu.png" width="70">
+                    <div class="d-flex flex-column ml-2"><span>Wall Restoration</span></div>
+                </div>
+                <h6>Capture and sync subscribers from your mailchimp platform to ours with ease.</h6>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="https://i.imgur.com/42SqVZd.png" width="70">
+                    <div class="d-flex flex-column ml-2"><span>Insulation</span></div>
+                </div>
+                <h6>Use dropbox to sync your photos to our platform and share it with others.</h6>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="https://i.imgur.com/lXEUCY8.png" width="70">
+                    <div class="d-flex flex-column ml-2"><span>Roof Restoration</span></div>
+                </div>
+                <h6>Sell you items with ease with having any website with our free platform</h6>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="https://i.imgur.com/S2In5pz.png" width="70">
+                    <div class="d-flex flex-column ml-2"><span>Energy Saving Facts</span></div>
+                </div>
+                <h6>Developing products for developers,project managers and architects.</h6>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
