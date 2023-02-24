@@ -50,25 +50,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "bodecsite.wsgi.application"
 
-# if DEVELOPMENT_MODE is True:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': 'db',
-#             'USER': 'db',
-#             'PASSWORD': 'AVNS__4ah-c6B9mty3ztMWJY',
-#             # 'USER': os.getenv("DB_USERNAME"),
-#             # 'PASSWORD': os.getenv("DB_PASSWORD"),
-#             'HOST': 'app-7e7b7a73-523a-4850-8232-0849003a0bbd-do-user-13471408-0.b.db.ondigitalocean.com',
-#             'PORT': '25060',
-#         }
-#     }
-# elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-#     if os.getenv("DATABASE_URL", None) is None:
-#         raise Exception("DATABASE_URL environment variable not defined")
-#     DATABASES = {
-#         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-#     }
+if DEVELOPMENT_MODE is True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'db',
+            'USER': os.getenv("DB_USERNAME"),
+            'PASSWORD': os.getenv("DB_PASSWORD"),
+            'HOST': 'app-7e7b7a73-523a-4850-8232-0849003a0bbd-do-user-13471408-0.b.db.ondigitalocean.com',
+            'PORT': '25060',
+        }
+    }
+elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    if os.getenv("DATABASE_URL", None) is None:
+        raise Exception("DATABASE_URL environment variable not defined")
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    }
 
 
 
