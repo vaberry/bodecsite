@@ -1,5 +1,5 @@
 .nav-link:hover {
   background-color: lightsalmon;
-  border-radius: 10%;
+  /* border-radius: 10%; */
   color: black;
 }
