@@ -1,3 +1,8 @@
+.modal-button p {
+    color: darkblue;
+    margin-bottom: 0;
+}
+
 .modal-button {
     /* background-color:rgb(29, 226, 226); */
     /* border-color: rgb(29, 226, 226); */
