@@ -11,13 +11,13 @@ class Contact(CreateView):
     model = Contact
     fields = ('__all__')
     def get_success_url(self):
-        # send_mail(
-        #     "Subject here",
-        #     "Here is the message.",
-        #     "vincent.berry11@gmail.com",
-        #     ["bodecroofing@embarqmail.com"],
-        #     fail_silently=False,
-        # )
+        send_mail(
+            "Subject here",
+            "Here is the message.",
+            "vincent.berry11@gmail.com",
+            ["vincent.berry11@gmail.com"],
+            fail_silently=False,
+        )
         return reverse('contact')
 
 class Services(TemplateView):
