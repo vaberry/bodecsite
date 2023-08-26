@@ -16,7 +16,7 @@ class Contact(CreateView):
             "New Bo-Dec Lead...",
             f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Ext.: {contact_dict.get('phone_1')} \n Description: {contact_dict.get('description')}",
             "vincent.berry11@gmail.com",
-            ["bodecroofing@embarqmail.com"],
+            ["bodecroofing@embarqmail.com","vincent.berry11@gmail.com"],
             fail_silently=False,
         )
         return reverse('contact')
