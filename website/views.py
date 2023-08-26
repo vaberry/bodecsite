@@ -1,8 +1,6 @@
+from django.views.generic import View,TemplateView
 from django.shortcuts import render, redirect
-from django.views.generic import View,TemplateView,CreateView
-from .models import Contact
 from django.core.mail import send_mail
-from .models import Contact
 from .forms import ContactForm
 
 class Home(TemplateView):
@@ -20,7 +18,7 @@ class Contact(View):
             contact_dict = request.POST.dict()
             send_mail(
                 "New Bo-Dec Lead...",
-                f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Phone Ext.: {contact_dict.get('phone_1')} \n Description: {contact_dict.get('description')}",
+                f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Phone Ext.: {contact_dict.get('phone_1')} \n Message: {contact_dict.get('description')}",
                 "vincent.berry11@gmail.com",
                 ["bodecroofing@embarqmail.com","vincent.berry11@gmail.com"],
                 fail_silently=False,

@@ -1,8 +1,6 @@
 from pathlib import Path
 import os
 from django.core.management.utils import get_random_secret_key
-import sys
-import dj_database_url
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -61,26 +59,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "bodecsite.wsgi.application"
 
-if DEVELOPMENT_MODE is True:
-    print('connecting to development DB')
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-else:
-    print('starting in production DB')
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'db',
-            'USER': os.getenv("DB_USERNAME"),
-            'PASSWORD': os.getenv("DB_PASSWORD"),
-            'HOST': 'app-6ea64051-9567-4992-89ec-85af70f66ccf-do-user-13471408-0.b.db.ondigitalocean.com',
-            'PORT': '25060',
-        }
-    }
+# if DEVELOPMENT_MODE is True:
+#     print('connecting to development DB')
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#         }
+#     }
+# else:
+#     print('starting in production DB')
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'db',
+#             'USER': os.getenv("DB_USERNAME"),
+#             'PASSWORD': os.getenv("DB_PASSWORD"),
+#             'HOST': 'app-6ea64051-9567-4992-89ec-85af70f66ccf-do-user-13471408-0.b.db.ondigitalocean.com',
+#             'PORT': '25060',
+#         }
+#     }
 
 # if DEVELOPMENT_MODE is True:
 #     DATABASES = {
@@ -141,10 +139,7 @@ STATIC_URL = 'static/'
 
 # Add these new lines
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
