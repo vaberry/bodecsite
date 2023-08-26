@@ -3,12 +3,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
 <style>
+
   .navbar {
     background-color: navy;
-  }
-
-  .nav-item h1,h2,h3 {
-    color: orange;
   }
 
   .nav-item:hover h3 {
@@ -36,12 +33,25 @@
     right: -5px;
     transform: translate(50%, -80%);
   }
-/* 
+
+  li {
+    list-style-type: none;
+    padding: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    text-transform: none;
+    font-size: 20px;
+    color: white;
+    position: relative;
+  }
+
   ul li a:before {
     content: "";
     width: 0;
     height: 5px;
-    background-color: #aea0ef;
+    background-color: silver;
     position: absolute;
     top: 120%;
     left: 0;
@@ -52,7 +62,7 @@
     content: "";
     width: 0;
     height: 5px;
-    background-color: #f9979c;
+    background-color: silver;
     position: absolute;
     top: 120%;
     right: 0;
@@ -77,24 +87,23 @@
   ul li a.active:after {
     width: 50%;
     transform: translateX(-100%);
-  } */
-
-
+  }
 </style>
+
 
 <nav style="text-align: center;" class="navbar navbar-expand-lg navbar-light py-5 sticky-top">
   <div class="container">
     <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center nav-item font-italic">
-      <h1 class="fw-bold">Bo-Dec, Inc.</h1>
+      <h1 class="fw-bold" style="color: orange;">Bo-Dec, Inc.</h1>
     </a>
-    
+
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto custom-nav">
-        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link font-italic"><h3>&nbsp;Home&nbsp;</h3></a></li>
-        <li class="nav-item"><a href="{% url 'services' %}" class="nav-link font-italic"><h3>&nbsp;Services&nbsp;</h3></a></li>
-        <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link font-italic"><h3>&nbsp;Gallery&nbsp;</h3></a></li>
-        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link font-italic"><h3>&nbsp;Contact Us&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'home' %}" style="color: orange;" class="nav-link font-italic {% if request.path == '/' %}active text-light{% endif %}"><h3>&nbsp;Home&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'services' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'services' %}active text-light{% endif %}"><h3>&nbsp;Services&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'gallery' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'gallery' %}active text-light{% endif %}"><h3>&nbsp;Gallery&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'contact' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'contact' %}active text-light{% endif %}"><h3>&nbsp;Contact Us&nbsp;</h3></a></li>
       </ul>
     </div>
   </div>
