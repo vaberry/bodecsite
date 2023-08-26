@@ -11,11 +11,13 @@ class Contact(CreateView):
     model = Contact
     fields = ('__all__')
     def get_success_url(self):
+        contact_dict = self.request.POST.dict()
+        print(contact_dict)
         send_mail(
-            "Subject here",
-            "Here is the message.",
+            "New Bo-Dec Lead...",
+            f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Ext.: {contact_dict.get('phone_1')} \n Description: {contact_dict.get('description')}",
             "vincent.berry11@gmail.com",
-            ["vincent.berry11@gmail.com"],
+            ["bodecroofing@embarqmail.com"],
             fail_silently=False,
         )
         return reverse('contact')
