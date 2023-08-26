@@ -1,5 +1,14 @@
-.nav-link:hover {
-  background-color: lightsalmon;
-  /* border-radius: 10%; */
-  color: black;
+body {
+  background-color: navy;
 }
+
+.nav-container > a {
+  color: white;
+}
+
+
+/* .nav-link:hover {
+  background-color: lightsalmon;
+  border-radius: 10%;
+  color: black;
+} */

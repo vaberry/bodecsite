@@ -1,27 +1,58 @@
 {% load static %}
-
-<link rel="stylesheet" href="{% static 'css/_navbar.css' %}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<nav style="text-align: center;" class="navbar navbar-expand-lg navbar-light bg-light py-5">
+<style>
+  .navbar {
+    background-color: navy;
+  }
+
+  .nav-item h1,h2,h3 {
+    color: orange;
+  }
+
+  .nav-item:hover h3 {
+    color: white;
+  }
+
+  .navbar-toggler {
+    color: white;
+    background-color: lightgray;
+  }
+
+  .custom-nav .nav-item:not(:last-child) {
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .custom-nav .nav-item:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translate(50%, -80%);
+  }
+
+</style>
+
+<nav style="text-align: center;" class="navbar navbar-expand-lg navbar-light py-5 sticky-top">
   <div class="container">
-    <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
-      <i class="fa fa-hammer fa-lg text-primary mr-3"></i>
-      <strong>Bo-Dec, Inc.</strong>
+    <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center nav-item font-italic">
+      <h1 class="fw-bold">Bo-Dec, Inc.</h1>
     </a>
     
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link font-italic"> Home </a></li>
-        <!-- <li class="nav-item"><a href="{% url 'about' %}" class="nav-link font-italic"> About Us </a></li> -->
-        <li class="nav-item"><a href="{% url 'services' %}" class="nav-link font-italic"> Services </a></li>
-        <li class="nav-item"><a href="#" class="nav-link font-italic"> Testimonials </a></li>
-        <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link font-italic"> Gallery </a></li>
-        <li class="nav-item"><a href="#" class="nav-link font-italic"> Careers </a></li>
-        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link font-italic"> Contact Us</a></li>
+      <ul class="navbar-nav ml-auto custom-nav">
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link font-italic"><h3>&nbsp;Home&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'services' %}" class="nav-link font-italic"><h3>&nbsp;Services&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link font-italic"><h3>&nbsp;Gallery&nbsp;</h3></a></li>
+        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link font-italic"><h3>&nbsp;Contact Us&nbsp;</h3></a></li>
       </ul>
     </div>
   </div>
