@@ -99,12 +99,22 @@
 
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto custom-nav">
-        <li class="nav-item"><a href="{% url 'home' %}" style="color: orange;" class="nav-link font-italic {% if request.path == '/' %}active text-light{% endif %}"><h3>&nbsp;Home&nbsp;</h3></a></li>
-        <li class="nav-item"><a href="{% url 'services' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'services' %}active text-light{% endif %}"><h3>&nbsp;Services&nbsp;</h3></a></li>
-        <li class="nav-item"><a href="{% url 'gallery' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'gallery' %}active text-light{% endif %}"><h3>&nbsp;Gallery&nbsp;</h3></a></li>
-        <li class="nav-item"><a href="{% url 'contact' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'contact' %}active text-light{% endif %}"><h3>&nbsp;Contact Us&nbsp;</h3></a></li>
-      </ul>
+      <div class="d-none d-md-block ml-auto">
+        <ul class="navbar-nav custom-nav">
+          <li class="nav-item"><a href="{% url 'home' %}" style="color: orange;" class="nav-link font-italic {% if request.path == '/' %}active text-light{% endif %}"><h3>&nbsp;Home&nbsp;</h3></a></li>
+          <li class="nav-item"><a href="{% url 'services' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'services' %}active text-light{% endif %}"><h3>&nbsp;Services&nbsp;</h3></a></li>
+          <li class="nav-item"><a href="{% url 'gallery' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'gallery' %}active text-light{% endif %}"><h3>&nbsp;Gallery&nbsp;</h3></a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'contact' %}active text-light{% endif %}"><h3>&nbsp;Contact Us&nbsp;</h3></a></li>
+        </ul>  
+      </div>
+      <div class="d-md-none">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="{% url 'home' %}" style="color: orange;" class="nav-link font-italic {% if request.path == '/' %}active text-light{% endif %}"><h3>&nbsp;Home&nbsp;</h3></a></li>
+          <li class="nav-item"><a href="{% url 'services' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'services' %}active text-light{% endif %}"><h3>&nbsp;Services&nbsp;</h3></a></li>
+          <li class="nav-item"><a href="{% url 'gallery' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'gallery' %}active text-light{% endif %}"><h3>&nbsp;Gallery&nbsp;</h3></a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" style="color: orange;" class="nav-link font-italic {% if request.resolver_match.view_name == 'contact' %}active text-light{% endif %}"><h3>&nbsp;Contact Us&nbsp;</h3></a></li>
+        </ul>  
+      </div>
     </div>
   </div>
 </nav>
