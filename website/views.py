@@ -18,30 +18,12 @@ class Contact(View):
             contact_dict = request.POST.dict()
             send_mail(
                 "New Bo-Dec Lead...",
-                f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Phone Ext.: {contact_dict.get('phone_1')} \n Message: {contact_dict.get('description')}",
+                f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Phone Ext.: {contact_dict.get('phone_1')} \n Message: {contact_dict.get('message')}",
                 "vincent.berry11@gmail.com",
                 ["bodecroofing@embarqmail.com","vincent.berry11@gmail.com"],
                 fail_silently=False,
             )
             return redirect('contact')
-        # contact_dict = request.POST.dict()
-        # send_mail(
-        #     "New Bo-Dec Lead...",
-        #     f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Ext.: {contact_dict.get('phone_1')} \n Description: {contact_dict.get('description')}",
-        #     "
-# class Contact(CreateView):
-#     model = Contact
-#     fields = ('__all__')
-#     def get_success_url(self):
-#         contact_dict = self.request.POST.dict()
-#         send_mail(
-#             "New Bo-Dec Lead...",
-#             f" Name: {contact_dict.get('name')} \n Company: {contact_dict.get('company')} \n Email: {contact_dict.get('email')} \n Phone: {contact_dict.get('phone_0')} \n Ext.: {contact_dict.get('phone_1')} \n Description: {contact_dict.get('description')}",
-#             "vincent.berry11@gmail.com",
-#             ["bodecroofing@embarqmail.com","vincent.berry11@gmail.com"],
-#             fail_silently=False,
-#         )
-#         return reverse('contact')
 
 class Services(TemplateView):
     template_name='website/services.html'

@@ -10,4 +10,4 @@ class Contact(models.Model):
     company = models.CharField(max_length=130, null=True)
     email = models.EmailField(blank=False)
     phone = PhoneField(blank=True)
-    description = models.TextField(blank=False)
+    message = models.TextField(blank=False)
